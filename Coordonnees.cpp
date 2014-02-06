@@ -1,11 +1,10 @@
 #include "Coordonnees.h"
 
-Coordonnees::Coordonnees()
-{
-    //ctor
-}
+Coordonnees::Coordonnees() : col(0), lig(0) {}
+Coordonnees::Coordonnees(int c, int l) : col(c), lig(l) {}
 
-Coordonnees::~Coordonnees()
+ostream& operator<<(ostream& os, const Coordonnees &c)
 {
-    //dtor
+    os << "(" << c.col << " , " << c.lig << ")";
+    return os;
 }

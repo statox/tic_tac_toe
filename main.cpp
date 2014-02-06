@@ -1,12 +1,28 @@
 #include <iostream>
-#include <string> // Obligatoire pour pouvoir utiliser les objets string
+#include "Partie.h"
+#include "Coordonnees.h"
 
 using namespace std;
 
 
 int main()
 {
-    cout << "hello world" << endl;
+//    Partie partie;
+//
+//    partie.Getplateau().afficher();
+
+    Plateau p(10, 5, 3);
+
+    Humain j("nom", 'X');
+
+
+    p.afficher();
+
+    j.choisirCase(p);
+
+
+    cout << "pouet" << endl;
+
 
     return 0;
 }

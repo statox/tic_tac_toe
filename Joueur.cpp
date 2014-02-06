@@ -1,6 +1,7 @@
 #include "Joueur.h"
 
-Joueur::Joueur()
+Joueur::Joueur(string n, char s)
 {
-    //ctor
+    Setnom(n);
+    Setsymbole(s);
 }

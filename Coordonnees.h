@@ -1,20 +1,24 @@
 #ifndef COORDONNEES_H
 #define COORDONNEES_H
 
+#include <iostream>
+using namespace std;
 
 class Coordonnees
 {
     public:
         Coordonnees();
-        virtual ~Coordonnees();
-        int Getx() { return x; }
-        void Setx(int val) { x = val; }
-        int Gety() { return y; }
-        void Sety(int val) { y = val; }
+        Coordonnees(int c, int l);
+        int Getcol() { return col; }
+        void Setcol(int val) { col = val; }
+        int Getlig() { return lig; }
+        void Setlig(int val) { lig = val; }
+
+        friend ostream& operator<<(ostream&, const Coordonnees &c);
     protected:
     private:
-        int x;
-        int y;
+        int col;
+        int lig;
 };
 
 #endif // COORDONNEES_H
