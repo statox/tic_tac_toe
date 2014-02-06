@@ -32,7 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Coordonnees.cpp" />
+		<Unit filename="Coordonnees.h" />
+		<Unit filename="Humain.cpp" />
+		<Unit filename="Humain.h" />
+		<Unit filename="Joueur.cpp" />
+		<Unit filename="Joueur.h" />
+		<Unit filename="Machine.cpp" />
+		<Unit filename="Machine.h" />
+		<Unit filename="include\Plateau.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src\Plateau.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
