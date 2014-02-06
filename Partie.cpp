@@ -65,3 +65,15 @@ Partie::Partie()
 
     cout << "sur un plateau " << plateau->GetnbColonnes() << "x" << plateau->GetnbLignes() << " ou il faut aligner " << plateau->GetnbAlign() << " pions pour gagner" << endl << endl;
 }
+
+void Partie::jouer()
+{
+    int t=0;
+    while (t<20){
+        if (t%2!=j1->GetnumeroTour()){
+
+        }
+
+    }
+
+}

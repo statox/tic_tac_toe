@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 
+#include "Joueur.h"
 #include "Coordonnees.h"
 
 class Plateau
@@ -21,10 +22,12 @@ class Plateau
         int GetnbAlign() { return nbAlign; }
         void SetnbAlign(int val) { nbAlign = val; }
 
-        void Setcase(Coordonnees c, int val) {cout << "coucou" << endl; plateau[c.Getlig()][c.Getcol()] = val; cout << "caca" << endl; }
+        void Setcase(Coordonnees c, int val) { plateau[c.Getlig()][c.Getcol()] = val; }
         int Getcase(Coordonnees c) { return plateau[c.Getlig()][c.Getcol()]; }
 
         void afficher();
+//        void marquer(Coordonnees c, Joueur j);
+        void test(Joueur j1) {cout << "coucou" << endl;}
     protected:
     private:
         int** plateau;

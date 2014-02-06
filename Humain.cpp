@@ -10,7 +10,7 @@ Coordonnees Humain::choisirCase(Plateau plateau)
     int col=-1, lig=-1;
     Coordonnees c;
 
-//    do{
+    do{
         do{
             cout << "Choisissez la colonne dans laquelle vous souhaitez jouer: ";
             cin >> col;
@@ -24,9 +24,10 @@ Coordonnees Humain::choisirCase(Plateau plateau)
         c.Setcol(col);
         c.Setlig(lig);
 
-        cout << "coordonnee: " << c << endl;
+        if (plateau.Getcase(c)!=0)
+            cout << "La case " << c << " est deja pleine" << endl;
 
-//    }while(plateau.Getcase(c)!=0);
+    }while(plateau.Getcase(c)!=0);
 
     return c;
 }

@@ -40,9 +40,11 @@
 		<Unit filename="Joueur.h" />
 		<Unit filename="Machine.cpp" />
 		<Unit filename="Machine.h" />
-		<Unit filename="include\Plateau.h" />
+		<Unit filename="Partie.cpp" />
+		<Unit filename="Partie.h" />
+		<Unit filename="Plateau.cpp" />
+		<Unit filename="Plateau.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src\Plateau.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

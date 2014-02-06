@@ -41,3 +41,11 @@ void Plateau::afficher()
         cout << endl;
     }
 }
+
+void Plateau::marquer(Coordonnees c, Joueur j){
+
+    if (Getcase(c)==0 /*&& c est dans le plateau*/){
+        plateau[c.Getlig()][c.Getcol()]==j->GetnumeroTour();
+    }
+
+}

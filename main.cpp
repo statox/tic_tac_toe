@@ -15,10 +15,14 @@ int main()
 
     Humain j("nom", 'X');
 
+    j.SetnumeroTour(3);
 
+    p.Setcase(Coordonnees(0,0), 2);
     p.afficher();
 
-    j.choisirCase(p);
+
+
+    p.marquer(j.choisirCase(p), j);;
 
 
     cout << "pouet" << endl;
