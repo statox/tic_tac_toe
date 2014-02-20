@@ -8,9 +8,10 @@
 class Partie
 {
     public:
-        Partie();
+        Partie();   // constructeur a utiliser dans la version finale qui demande les caracteristiques a l'utilisateur
+        Partie(int a);  // constructeur qui entre tous les parametres par defaut pour gagner du temps pendant les tests
 
-        Plateau Getplateau() { return *plateau; }
+        Plateau* Getplateau() { return plateau; }
         Joueur Getj1() { return *j1; }
         Joueur Getj2() { return *j2; }
 

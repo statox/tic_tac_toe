@@ -22,7 +22,7 @@ class Joueur
         /* cette methode renvoit la case sur laquelle le joueur veut jouer
             elle est abstraite puisqu'un humain choisira cette case a la main alors
             qu'une machine la choisira avec une fonction*/
-        Coordonnees choisirCase(Plateau plateau);
+        virtual Coordonnees choisirCase(Plateau* plateau);
 
     protected:
     private:

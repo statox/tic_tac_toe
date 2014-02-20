@@ -10,7 +10,7 @@ Machine::Machine(string nom, char symbole) : Joueur(nom, symbole)
     Setniveau(niv);
 }
 
-Coordonnees Machine::choisirCase(Plateau plateau)
+Coordonnees Machine::choisirCase(Plateau* plateau)
 {
     cout << "Pour l'instant je ne sais pas choisir de case" << endl;
     return Coordonnees (0,0);

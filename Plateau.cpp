@@ -24,28 +24,42 @@ Plateau::Plateau(int col, int lig, int align)
 
 Plateau::~Plateau()
 {
-    cout << "destruction" << endl;
     for (int i=0; i<nbLignes; i++)
         delete[] plateau[i];
 
     delete[] plateau;
-
-    cout << "fin destruction" << endl;
 }
 
-void Plateau::afficher()
+void Plateau::afficher(Joueur* j1, Joueur* j2)
 {
     for (int i=0; i < nbLignes; i++){
         for (int j=0; j < nbColonnes; j++){
-            cout << plateau[i][j] << " ";
+            if (plateau[i][j]==j1->GetnumeroTour())
+                cout << j1->Getsymbole() << " ";
+            else if (plateau[i][j]==j2->GetnumeroTour())
+                cout << j2->Getsymbole() << " ";
+            else
+                cout << "." << " ";
         }
         cout << endl;
     }
 }
 
-void Plateau::marquer(Coordonnees c, Joueur j){
+void Plateau::marquer(Coordonnees c, Joueur* j){
 
-//    if (Getcase(c)==0 /*&& c est dans le plateau*/){
-//        plateau[c.Getlig()][c.Getcol()] == j.GetnumeroTour();
-//    }
+    if (Getcase(c)==0 /*&& c est dans le plateau*/){
+        cout << "on va marquer la case " << c << " avec le numero " << j->GetnumeroTour() << endl;
+        plateau[c.Getlig()][c.Getcol()] = j->GetnumeroTour();
+    }
+    else
+    {
+        cout << "case invalide echec du tour" << endl;
+    }
+}
+
+void Plateau::creerMasques()
+{
+    std::list <int* > masques;
+
+
 }

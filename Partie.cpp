@@ -1,5 +1,26 @@
 #include "Partie.h"
 
+// constructeur par defaut pour gagner du temps pendant les tests
+// a supprimer dans la version finale
+Partie::Partie(int a)
+{
+    plateau = new Plateau(5, 5, 3);
+
+    j1 = new Humain("joueur 1", 'X');
+    j2 = new Humain("joueur 2", 'O');
+
+    j1->SetnumeroTour(1);
+    j2->SetnumeroTour(2);
+
+    cout << "\t creation d'une partie par defaut:" << endl;
+    cout << "la partie oppose : " << endl;
+    cout << j1->Getnom() << " qui joue les " << j1->Getsymbole() << " et joue en " << j1->GetnumeroTour() << "e" << endl;
+    cout << "a " << endl;
+    cout << j2->Getnom() << " qui joue les " << j2->Getsymbole() << " et joue en " << j2->GetnumeroTour() << "e" << endl;
+
+    cout << "sur un plateau " << plateau->GetnbColonnes() << "x" << plateau->GetnbLignes() << " ou il faut aligner " << plateau->GetnbAlign() << " pions pour gagner" << endl << endl;
+}
+
 Partie::Partie()
 {
 
@@ -69,11 +90,17 @@ Partie::Partie()
 void Partie::jouer()
 {
     int t=0;
+    plateau->afficher(j1, j2);
+
     while (t<20){
-        if (t%2!=j1->GetnumeroTour()){
+        t++;
 
+        if (t%2+1==j1->GetnumeroTour()){
+            plateau->marquer(j1->choisirCase(plateau), j1);
+        }else{
+            plateau->marquer(j2->choisirCase(plateau), j2);
         }
-
+        plateau->afficher(j1, j2);
     }
-
 }
+

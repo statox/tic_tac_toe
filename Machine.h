@@ -13,7 +13,7 @@ class Machine : public Joueur
         int Getniveau() { return niveau; }
 
         /* cette fonction renvoit la case sur laquelle la machine decide de jouer*/
-        virtual Coordonnees choisirCase(Plateau plateau);
+        Coordonnees choisirCase(Plateau* plateau);
     protected:
     private:
         int niveau;

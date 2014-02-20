@@ -31,8 +31,15 @@ class Plateau
         void Setcase(Coordonnees c, int val) {plateau[c.Getlig()][c.Getcol()] = val;}
         int Getcase(Coordonnees c) {if(c.Getlig()<GetnbLignes() && c.Getcol()<GetnbColonnes()){return plateau[c.Getlig()][c.Getcol()];}else{return -1;}}
 
-        void afficher();
-        void marquer(Coordonnees c, Joueur j);
+        // pour l'instant c'est une fonction de test
+        // on creer l'ensemble des masques du plateau
+        // elle evoluera probablement sur son type de retour qui renverra un vecteur de tableau de cases
+        // et on aura probablement un membre de la classe qui contiendra ce vecteur
+        void creerMasques();
+
+
+        void afficher(Joueur* j1, Joueur* j2);
+        void marquer(Coordonnees c, Joueur* j);
 };
 
 #endif // PLATEAU_H

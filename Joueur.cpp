@@ -7,3 +7,5 @@ Joueur::Joueur(string n, char s)
     Setsymbole(s);
 }
 
+Coordonnees Joueur::choisirCase(Plateau* plateau)
+{}
