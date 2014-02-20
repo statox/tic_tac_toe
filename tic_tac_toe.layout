@@ -1,43 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Coordonnees.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="244" topLine="0" />
+	<File name="Coordonnees.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="113" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="Coordonnees.h" open="0" top="0" tabpos="0">
-		<Cursor position="89" topLine="0" />
+	<File name="Joueur.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="123" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="Humain.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="717" topLine="4" />
+	<File name="Humain.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="41" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="Humain.h" open="0" top="0" tabpos="2">
-		<Cursor position="237" topLine="0" />
+	<File name="Partie.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="121" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="Joueur.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="23" topLine="0" />
+	<File name="Partie.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="310" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="Joueur.h" open="1" top="0" tabpos="7">
-		<Cursor position="150" topLine="6" />
+	<File name="Joueur.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="830" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="Machine.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="256" topLine="0" />
+	<File name="Machine.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="389" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="Machine.h" open="0" top="0" tabpos="4">
-		<Cursor position="387" topLine="0" />
+	<File name="Machine.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="77" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="Partie.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="2176" topLine="46" />
+	<File name="Coordonnees.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="73" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="Partie.h" open="1" top="0" tabpos="5">
-		<Cursor position="309" topLine="0" />
+	<File name="Plateau.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="923" topLine="15" />
+		</Cursor>
 	</File>
-	<File name="Plateau.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="1070" topLine="22" />
+	<File name="Plateau.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1026" topLine="2" />
+		</Cursor>
 	</File>
-	<File name="Plateau.h" open="1" top="1" tabpos="2">
-		<Cursor position="104" topLine="8" />
+	<File name="Humain.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="75" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="176" topLine="0" />
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="106" topLine="3" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

@@ -1,4 +1,5 @@
 #include "Plateau.h"
+#include "Joueur.h"
 
 Plateau::Plateau(int col, int lig, int align)
 {
@@ -44,8 +45,7 @@ void Plateau::afficher()
 
 void Plateau::marquer(Coordonnees c, Joueur j){
 
-    if (Getcase(c)==0 /*&& c est dans le plateau*/){
-        plateau[c.Getlig()][c.Getcol()]==j->GetnumeroTour();
-    }
-
+//    if (Getcase(c)==0 /*&& c est dans le plateau*/){
+//        plateau[c.Getlig()][c.Getcol()] == j.GetnumeroTour();
+//    }
 }

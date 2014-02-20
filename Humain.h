@@ -2,7 +2,7 @@
 #define HUMAIN_H
 
 #include "Joueur.h"
-
+class Plateau;
 
 class Humain : public Joueur
 {

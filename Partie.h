@@ -14,7 +14,7 @@ class Partie
         Joueur Getj1() { return *j1; }
         Joueur Getj2() { return *j2; }
 
-        void jouer()
+        void jouer();
 
     protected:
     private:

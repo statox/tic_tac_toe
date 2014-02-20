@@ -3,6 +3,7 @@
 
 #include "Joueur.h"
 
+class Plateau;
 class Machine : public Joueur
 {
     public:

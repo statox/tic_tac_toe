@@ -6,8 +6,8 @@
 using namespace std;
 
 #include "Coordonnees.h"
-#include "Plateau.h"
 
+class Plateau;  // forward délcaration pour pouvoir utiliser la classe dans la méthode choisirCase()
 class Joueur
 {
     public:
@@ -22,7 +22,7 @@ class Joueur
         /* cette methode renvoit la case sur laquelle le joueur veut jouer
             elle est abstraite puisqu'un humain choisira cette case a la main alors
             qu'une machine la choisira avec une fonction*/
-        virtual Coordonnees choisirCase(Plateau plateau) {};
+        Coordonnees choisirCase(Plateau plateau);
 
     protected:
     private:

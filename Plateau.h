@@ -4,11 +4,17 @@
 #include <iostream>
 using namespace std;
 
-#include "Joueur.h"
 #include "Coordonnees.h"
+class Joueur;
 
 class Plateau
 {
+    private:
+        int** plateau;
+        int nbColonnes;
+        int nbLignes;
+        int nbAlign;
+
     public:
         Plateau(int col, int lig, int align);
         ~Plateau();
@@ -22,18 +28,11 @@ class Plateau
         int GetnbAlign() { return nbAlign; }
         void SetnbAlign(int val) { nbAlign = val; }
 
-        void Setcase(Coordonnees c, int val) { plateau[c.Getlig()][c.Getcol()] = val; }
-        int Getcase(Coordonnees c) { return plateau[c.Getlig()][c.Getcol()]; }
+        void Setcase(Coordonnees c, int val) {plateau[c.Getlig()][c.Getcol()] = val;}
+        int Getcase(Coordonnees c) {if(c.Getlig()<GetnbLignes() && c.Getcol()<GetnbColonnes()){return plateau[c.Getlig()][c.Getcol()];}else{return -1;}}
 
         void afficher();
-//        void marquer(Coordonnees c, Joueur j);
-        void test(Joueur j1) {cout << "coucou" << endl;}
-    protected:
-    private:
-        int** plateau;
-        int nbColonnes;
-        int nbLignes;
-        int nbAlign;
+        void marquer(Coordonnees c, Joueur j);
 };
 
 #endif // PLATEAU_H

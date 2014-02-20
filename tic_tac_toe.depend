@@ -46,3 +46,53 @@
 1391727673 source:d:\scolaire\l3\semestre6\aide_a_la_decision\projet\tic_tac_toe\plateau.cpp
 	"Plateau.h"
 
+1392894102 source:e:\depots_git\tic_tac_toe\coordonnees.cpp
+	"Coordonnees.h"
+
+1392654856 e:\depots_git\tic_tac_toe\coordonnees.h
+	<iostream>
+
+1392893090 source:e:\depots_git\tic_tac_toe\humain.cpp
+	"Humain.h"
+	"Plateau.h"
+
+1392893090 e:\depots_git\tic_tac_toe\humain.h
+	"Joueur.h"
+
+1392896024 e:\depots_git\tic_tac_toe\joueur.h
+	<string>
+	<iostream>
+	"Coordonnees.h"
+
+1392893510 source:e:\depots_git\tic_tac_toe\joueur.cpp
+	"Joueur.h"
+	"Plateau.h"
+
+1392895396 source:e:\depots_git\tic_tac_toe\machine.cpp
+	"Machine.h"
+	"Plateau.h"
+
+1392893138 e:\depots_git\tic_tac_toe\machine.h
+	"Joueur.h"
+
+1392896040 source:e:\depots_git\tic_tac_toe\main.cpp
+	<iostream>
+	"Partie.h"
+	"Coordonnees.h"
+
+1392893144 e:\depots_git\tic_tac_toe\partie.h
+	"Humain.h"
+	"Machine.h"
+	"Plateau.h"
+
+1392895396 e:\depots_git\tic_tac_toe\plateau.h
+	<iostream>
+	"Coordonnees.h"
+
+1392654856 source:e:\depots_git\tic_tac_toe\partie.cpp
+	"Partie.h"
+
+1392893864 source:e:\depots_git\tic_tac_toe\plateau.cpp
+	"Plateau.h"
+	"Joueur.h"
+
