@@ -7,8 +7,12 @@ using namespace std;
 
 int main()
 {
-    Partie partie(1);
-    partie.jouer();
+//    Partie partie(1);
+//    partie.jouer();
+
+    Plateau p(3,3,2);
+
+    p.creerMasques();
 
     return 0;
 }
