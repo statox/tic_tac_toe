@@ -147,3 +147,67 @@
 	"Joueur.h"
 	<vector>
 
+1392913978 source:f:\depots_git\tic_tac_toe\humain.cpp
+	"Humain.h"
+	"Plateau.h"
+
+1392915980 f:\depots_git\tic_tac_toe\humain.h
+	"Joueur.h"
+
+1392915980 f:\depots_git\tic_tac_toe\joueur.h
+	<string>
+	<iostream>
+	"Coordonnees.h"
+
+1393258544 f:\depots_git\tic_tac_toe\coordonnees.h
+	<iostream>
+
+1392919180 f:\depots_git\tic_tac_toe\plateau.h
+	<iostream>
+	"Coordonnees.h"
+
+1392916212 source:f:\depots_git\tic_tac_toe\joueur.cpp
+	"Joueur.h"
+	"Plateau.h"
+
+1392913318 source:f:\depots_git\tic_tac_toe\machine.cpp
+	"Machine.h"
+	"Plateau.h"
+
+1392915980 f:\depots_git\tic_tac_toe\machine.h
+	"Joueur.h"
+
+1392918566 source:f:\depots_git\tic_tac_toe\partie.cpp
+	"Partie.h"
+
+1392915678 f:\depots_git\tic_tac_toe\partie.h
+	"Humain.h"
+	"Machine.h"
+	"Plateau.h"
+
+1393260856 source:f:\depots_git\tic_tac_toe\main.cpp
+	<iostream>
+	"Partie.h"
+	"Coordonnees.h"
+	"templates.h"
+
+1393258506 source:f:\depots_git\tic_tac_toe\coordonnees.cpp
+	"Coordonnees.h"
+
+1393260826 source:f:\depots_git\tic_tac_toe\plateau.cpp
+	"Plateau.h"
+	"Joueur.h"
+	<vector>
+	"Masque.h"
+	"templates.h"
+
+1393257428 source:f:\depots_git\tic_tac_toe\masque.cpp
+	"Masque.h"
+
+1393260072 f:\depots_git\tic_tac_toe\masque.h
+
+1393260286 f:\depots_git\tic_tac_toe\templates.h
+	<vector>
+	<algorithm>
+	<iostream>
+

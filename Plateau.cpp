@@ -2,6 +2,9 @@
 #include "Joueur.h"
 #include <vector>
 
+
+#include "templates.h"
+
 using namespace std;
 
 Plateau::Plateau(int col, int lig, int align)
@@ -60,6 +63,98 @@ void Plateau::marquer(Coordonnees c, Joueur* j){
     }
 }
 
+//void Plateau::creerMasques()
+//{
+//    vector< vector<Coordonnees> > masques; // masque est un veccteur contenant des vecteurs de coordonnées
+//    vector<Coordonnees> tmp;    // tmp sera le vecteur temporaire qui servira a remplir masques
+//
+//    masques.clear();
+//
+//    /*  creation des masques correspondants aux lignes  */
+//    // pour chaque ligne
+//    for (int lig=0; lig<nbLignes; lig++){
+//        // pour chaque case de la ligne (jusqu'a la p-ième avant la fin de la ligne)
+//        for (int col=0; col<nbColonnes-nbAlign+1; col++){
+//            tmp.clear();
+//            Coordonnees c(col-1,lig);
+//            // on ajoute au vecteur tmp p cases
+//            for (int k=0; k<nbAlign; k++){
+//                c.Setcol(c.Getcol()+1);
+//                tmp.push_back(c);
+//            }
+//
+//            // on ajoute le nouveau masque a la collection
+//            masques.push_back(tmp);
+//        }
+//    }
+//
+//    /*  creation des masques correspondants aux colonnes */
+//    // pour chaque colonne
+//    for (int col=0; col<nbColonnes; col++){
+//        // pour chaque case de la colonne (jusqu'a la p-ieme avant la fin de la colonne)
+//        for (int lig=0; lig<nbLignes-nbAlign+1; lig++){
+//            tmp.clear();
+//            Coordonnees c(col, lig-1);
+//            // on ajoute au vecteur tmp p cases
+//            for (int k=0; k<nbAlign; k++){
+//                c.Setlig(c.Getlig()+1);
+//                tmp.push_back(c);
+//            }
+//
+//            // on ajoute le nouveau masque a la collection
+//            masques.push_back(tmp);
+//        }
+//    }
+//
+//    /*  creation des masques correspondants aux diagonales \ */
+//    // pour chaque colonne (jusqu'a la p-ieme avant la fin du plateau)
+//    for (int col=0; col<nbColonnes-nbAlign+1; col++){
+//        // pour chaque ligne (jusqu'a la p-ieme apres le debut du plateau)
+//        for (int lig=0; lig<nbLignes-nbAlign+1; lig++){
+//            tmp.clear();
+//            Coordonnees c(col-1, lig-1);
+//            // on ajoute p cases au vecteur tmp
+//            for (int k=0; k<nbAlign; k++){
+//                c.Setlig(c.Getlig()+1);
+//                c.Setcol(c.Getcol()+1);
+//                tmp.push_back(c);
+//            }
+//
+//            // on ajoute le nouveau masque a la collection
+//            masques.push_back(tmp);
+//        }
+//    }
+//
+//    /* creation des masques correspondants aux diagonales / */
+//    // pour chaque colonne (jusqu'a la p-ieme avant la fin du plateau)
+//    for (int col=0; col<nbColonnes-nbAlign+1; col++){
+//        // pour chaque ligne (a partir de la p-ieme apres le debut du plateau)
+//        for (int lig=nbAlign-1; lig<nbLignes; lig++){
+//            tmp.clear();
+//            Coordonnees c(col-1, lig+1);
+//            // on ajoute p cases au vecteur tmp
+//            for (int k=0; k<nbAlign; k++){
+//                c.Setlig(c.Getlig()-1);
+//                c.Setcol(c.Getcol()+1);
+//                tmp.push_back(c);
+//            }
+//
+//            // on ajoute le nouveau masque a la collection
+//            masques.push_back(tmp);
+//        }
+//    }
+//
+//    /* affichage de l'ensemble des masques (a desactiver dans la version finale) */
+//    for (int i=0; i<masques.size(); i++){
+//        cout << endl;
+//        for (int j=0; j<masques[i].size(); j++){
+//            cout << masques[i][j] << " ";
+//        }
+//    }
+//
+//}
+
+
 void Plateau::creerMasques()
 {
     vector< vector<Coordonnees> > masques; // masque est un veccteur contenant des vecteurs de coordonnées
@@ -81,7 +176,7 @@ void Plateau::creerMasques()
             }
 
             // on ajoute le nouveau masque a la collection
-//            masques.push_back(tmp);
+            masques.push_back(tmp);
         }
     }
 
@@ -99,7 +194,7 @@ void Plateau::creerMasques()
             }
 
             // on ajoute le nouveau masque a la collection
-//            masques.push_back(tmp);
+            masques.push_back(tmp);
         }
     }
 
@@ -118,7 +213,7 @@ void Plateau::creerMasques()
             }
 
             // on ajoute le nouveau masque a la collection
-//            masques.push_back(tmp);
+            masques.push_back(tmp);
         }
     }
 
@@ -141,13 +236,11 @@ void Plateau::creerMasques()
         }
     }
 
+    /* elimination des eventuels doublons */
+    // (en soit on a des doublons que dans le cas où on a des masques de 1 cases mais on l'a implémenté, ça tourne qu'une fois a la création du plateau
+    // donc autant le laisser ca fait pas de mal)
+    removeDuplicates(masques);
 
     /* affichage de l'ensemble des masques (a desactiver dans la version finale) */
-    for (int i=0; i<masques.size(); i++){
-        cout << endl;
-        for (int j=0; j<masques[i].size(); j++){
-            cout << masques[i][j] << " ";
-        }
-    }
-
+//    show(masques);
 }

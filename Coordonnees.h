@@ -15,6 +15,9 @@ class Coordonnees
         void Setlig(int val) { lig = val; }
 
         friend ostream& operator<<(ostream&, const Coordonnees &c);
+        friend bool operator==(const Coordonnees &c1, const Coordonnees &c2);
+        friend bool operator<(const Coordonnees &c1, const Coordonnees &c2);
+
     protected:
     private:
         int col;
