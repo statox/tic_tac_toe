@@ -21,13 +21,14 @@
       <x>770</x>
       <y>130</y>
       <w>290</w>
-      <h>110</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Joueur
 --
 -nom: string
-- symbole: char
-- numeroTour: int
+-symbole: char
+-numeroTour: int
+-joueEnPremier: bool
 --
 virtual Coordonnees choisirCase(Plateau*)</panel_attributes>
     <additional_attributes/>
@@ -68,8 +69,8 @@ Coordonnees choisirCase(Plateau*)</panel_attributes>
     <coordinates>
       <x>620</x>
       <y>440</y>
-      <w>250</w>
-      <h>160</h>
+      <w>280</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>Plateau
 --
@@ -77,10 +78,12 @@ Coordonnees choisirCase(Plateau*)</panel_attributes>
 -nbColonnes: int
 -nbLignes: int
 -nbAlign: int
+-vector&lt; vector&lt;Coordonnees&gt; &gt; masques;
 --
 void afficher(Joueur*, Joueur*)
 void marquer(Coordonnees, Joueur*)
-void creerMasques()</panel_attributes>
+void creerMasques()
+int masquePlein()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -97,31 +100,32 @@ void creerMasques()</panel_attributes>
 -j1: Joueur*
 -j2: Joueur*
 --
-void joueur()</panel_attributes>
+void joueur()
+int finPartie()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>940</x>
-      <y>210</y>
+      <y>220</y>
       <w>170</w>
-      <h>140</h>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;instanceOf&gt;&gt;</panel_attributes>
-    <additional_attributes>30;30;150;120</additional_attributes>
+    <additional_attributes>30;30;150;110</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>720</x>
-      <y>210</y>
+      <y>220</y>
       <w>160</w>
-      <h>140</h>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;instanceOf&gt;&gt;</panel_attributes>
-    <additional_attributes>140;30;30;120</additional_attributes>
+    <additional_attributes>140;30;30;110</additional_attributes>
   </element>
 </diagram>

@@ -18,6 +18,8 @@ class Joueur
         void Setsymbole(char val) { symbole = val; }
         int GetnumeroTour() { return numeroTour; }
         void SetnumeroTour(int val) {numeroTour = val; }
+        bool GetJoueEnPremier() { return joueEnPremier; }
+        void SetJoueEnPremier(bool val) {joueEnPremier = val; }
 
         /* cette methode renvoit la case sur laquelle le joueur veut jouer
             elle est abstraite puisqu'un humain choisira cette case a la main alors
@@ -29,6 +31,7 @@ class Joueur
         string nom;
         char symbole;
         int numeroTour;
+        bool joueEnPremier;
 };
 
 #endif // JOUEUR_H

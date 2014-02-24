@@ -17,6 +17,8 @@ class Partie
 
         void jouer();
 
+        int finPartie();
+
     protected:
     private:
         Plateau* plateau;

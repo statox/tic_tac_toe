@@ -9,8 +9,10 @@ Partie::Partie(int a)
     j1 = new Humain("joueur 1", 'X');
     j2 = new Humain("joueur 2", 'O');
 
-    j1->SetnumeroTour(1);
-    j2->SetnumeroTour(2);
+    j1->SetnumeroTour(-1);
+    j1->SetJoueEnPremier(false);
+    j2->SetnumeroTour(1);
+    j2->SetJoueEnPremier(true);
 
     cout << "\t creation d'une partie par defaut:" << endl;
     cout << "la partie oppose : " << endl;
@@ -71,36 +73,67 @@ Partie::Partie()
     cin >> choixTour;
 
     if (choixTour==0){
-        j1->SetnumeroTour(2);
+        j1->SetnumeroTour(-1);
+        j1->SetJoueEnPremier(false);
         j2->SetnumeroTour(1);
+        j2->SetJoueEnPremier(true);
     }else{
         j1->SetnumeroTour(1);
-        j2->SetnumeroTour(2);
+        j1->SetJoueEnPremier(true);
+        j2->SetnumeroTour(-1);
+        j2->SetJoueEnPremier(false);
     }
 
     cout << endl << endl;
     cout << "la partie oppose : " << endl;
-    cout << j1->Getnom() << " qui joue les " << j1->Getsymbole() << " et joue en " << j1->GetnumeroTour() << "e" << endl;
+    cout << j1->Getnom() << " qui joue les " << j1->Getsymbole() << endl;
     cout << "a " << endl;
-    cout << j2->Getnom() << " qui joue les " << j2->Getsymbole() << " et joue en " << j2->GetnumeroTour() << "e" << endl;
+    cout << j2->Getnom() << " qui joue les " << j2->Getsymbole() << endl;
 
     cout << "sur un plateau " << plateau->GetnbColonnes() << "x" << plateau->GetnbLignes() << " ou il faut aligner " << plateau->GetnbAlign() << " pions pour gagner" << endl << endl;
+    cout << endl << endl;
 }
 
 void Partie::jouer()
 {
     int t=0;
     plateau->afficher(j1, j2);
+    int victoire=0;
 
-    while (t<20){
+    do{
         t++;
-
-        if (t%2+1==j1->GetnumeroTour()){
-            plateau->marquer(j1->choisirCase(plateau), j1);
+        cout << endl;
+        if (t%2==1){
+            if (j1->GetJoueEnPremier()){
+                cout << "tour de " << j1->Getnom() << endl;
+                plateau->marquer(j1->choisirCase(plateau), j1);
+            }else{
+                cout << "tour de " << j2->Getnom() << endl;
+                plateau->marquer(j2->choisirCase(plateau), j2);
+            }
         }else{
-            plateau->marquer(j2->choisirCase(plateau), j2);
+            if (j1->GetJoueEnPremier()){
+                cout << "tour de " << j2->Getnom() << endl;
+                plateau->marquer(j2->choisirCase(plateau), j2);
+            }else{
+                cout << "tour de " << j1->Getnom() << endl;
+                plateau->marquer(j1->choisirCase(plateau), j1);
+            }
         }
         plateau->afficher(j1, j2);
-    }
+
+        victoire = finPartie();
+    }while (victoire==0);
+
+    cout << "victoire de ";
+    if (victoire==j1->GetnumeroTour())
+        cout << j1->Getnom();
+    else
+        cout << j2->Getnom();
+
 }
 
+int Partie::finPartie()
+{
+    return plateau->masquePlein();
+}
