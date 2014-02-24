@@ -45,6 +45,7 @@
 		<Unit filename="Plateau.cpp" />
 		<Unit filename="Plateau.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="templates.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -39,4 +39,15 @@ void removeDuplicates(std::vector<T>& vec)
     vec.erase(std::unique(vec.begin(), vec.end()), vec.end());
 }
 
+template<typename T>
+bool contains(std::vector<T> vec, T val)
+{
+    for (std::size_t i=0; i<vec.size(); i++){
+        if (vec[i]==val)
+            return true;
+    }
+
+    return false;
+}
+
 #endif // TEMPLATES_H_INCLUDED

@@ -20,6 +20,7 @@ class Plateau
 
     public:
         Plateau(int col, int lig, int align);
+        Plateau(const Plateau&);
         // creation du plateau a partir d'un fichier
         Plateau(string chemin);
         ~Plateau();
@@ -36,12 +37,18 @@ class Plateau
         void Setcase(Coordonnees c, int val) {plateau[c.Getlig()][c.Getcol()] = val;}
         int Getcase(Coordonnees c) {if(c.Getlig()<GetnbLignes() && c.Getcol()<GetnbColonnes()){return plateau[c.Getlig()][c.Getcol()];}else{return -1;}}
 
+        vector< vector<Coordonnees> > Getmasques() { return masques;}
+
         // cette fonction est appellée par le constructeur du plateau. Elle crée l'ensemble des masques du plateau (les alignements possibles)
         // et les stocke dans masques
         void creerMasques();
 
         // cette fonction verifie si l'un des masques est plein et renvoit le chiffre qui le remplit
         int masquePlein();
+
+        // on utilise cette fonction pour evaluer la performance d'une configuration
+        // la fonction renvoit une valeur entre -oo et +oo
+        int evaluation();
 
         void afficher(Joueur* j1, Joueur* j2);
         void marquer(Coordonnees c, Joueur* j);

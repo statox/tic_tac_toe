@@ -2,10 +2,10 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="Coordonnees.cpp" open="0" top="0" tabpos="9">
-		<Cursor position="135" topLine="0" />
+		<Cursor position="427" topLine="0" />
 	</File>
 	<File name="Coordonnees.h" open="0" top="0" tabpos="8">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="580" topLine="0" />
 	</File>
 	<File name="Humain.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="128" topLine="8" />
@@ -17,27 +17,30 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="Joueur.h" open="0" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="712" topLine="0" />
 	</File>
 	<File name="Machine.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="608" topLine="1" />
 	</File>
 	<File name="Machine.h" open="0" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="406" topLine="0" />
 	</File>
-	<File name="Partie.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="0" topLine="0" />
+	<File name="Partie.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="211" topLine="0" />
 	</File>
 	<File name="Partie.h" open="0" top="0" tabpos="10">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="548" topLine="0" />
 	</File>
 	<File name="Plateau.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="4100" topLine="121" />
+		<Cursor position="1789" topLine="51" />
 	</File>
 	<File name="Plateau.h" open="1" top="0" tabpos="2">
-		<Cursor position="0" topLine="12" />
+		<Cursor position="535" topLine="11" />
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="178" topLine="0" />
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="170" topLine="0" />
+	</File>
+	<File name="templates.h" open="0" top="0" tabpos="0">
+		<Cursor position="392" topLine="7" />
 	</File>
 </CodeBlocks_layout_file>

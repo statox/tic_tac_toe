@@ -29,6 +29,31 @@ Plateau::Plateau(int col, int lig, int align)
     creerMasques();
 }
 
+Plateau::Plateau(const Plateau& p)
+{
+    nbColonnes=p.nbColonnes;
+    nbLignes=p.nbLignes;
+    nbAlign=p.nbAlign;
+
+    // reservation du plateau
+    plateau = new int* [nbLignes];
+    int i;
+    for (i=0; i<nbLignes; i++)
+        plateau[i] = new int [nbColonnes];
+
+    // initialisation du plateau
+    for (int i=0; i < nbLignes; i++)
+        for (int j=0; j < nbColonnes; j++)
+            plateau[i][j] = p.plateau[i][j];
+
+    // creation des masques du plateau
+    vector< vector<Coordonnees> > tmp = p.masques;
+    for (std::size_t i=0; i<tmp.size(); ++i)
+        masques.push_back(tmp[i]);
+
+//    show(masques);
+}
+
 Plateau::Plateau(string chemin)
 {
     //chargement du fichier contenant le plateau
@@ -235,3 +260,53 @@ int Plateau::masquePlein()
     return 0;
 }
 
+int Plateau::evaluation()
+{
+    int j1=0, j2=0;
+    bool containsj1, containsj2;
+    // on parcours tous les masques
+    for (std::size_t i = 0; i < masques.size(); ++i){
+        containsj1 = containsj2 = false;
+        // on cherche si le masque contient un 1 (et un -1 au passage)
+        std::size_t j=0;
+        while(j<masques[i].size() && !containsj1){
+            if(Getcase(masques[i][j])==1)
+                containsj1=true;
+            if (Getcase(masques[i][j])==-1)
+                containsj2=true;
+            j++;
+        }
+        // si on a pas trouvé de -1 on en recherche 1
+        if(!containsj2 && j<masques[i].size()){
+            while(j<masques[i].size() && !containsj2){
+                if (Getcase(masques[i][j])==-1)
+                    containsj2=true;
+                j++;
+            }
+        }
+
+        // si l'alignement n'est favorable qu'au j1 on incrémente j1
+        if (containsj1 && !containsj2)
+            j1++;
+        // si l'alignement n'est favorable qu'au j2 on incrémente j2
+        else if (!containsj1 && containsj2)
+            j2++;
+        // on pourrait ajouter dans les deux quand l'alignement est vide mais je vois pas l'interet
+
+//          affichage pour les tests
+//        show(masques[i]);
+//        if (containsj1){
+//            cout << "  j1";
+//        }
+//        else{
+//            cout << "    ";
+//        }
+//        if (containsj2){
+//            cout << "  j2";
+//        }
+//        cout << endl;
+    }
+//    cout << endl << endl << "j1: " << j1 << "  j2: " << j2 << endl;
+
+    return j1-j2;
+}
