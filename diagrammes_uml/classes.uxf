@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>580</x>
+      <y>20</y>
+      <w>100</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Coordonnees
+--
+-col: int
+-lig: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>770</x>
+      <y>130</y>
+      <w>290</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Joueur
+--
+-nom: string
+- symbole: char
+- numeroTour: int
+--
+virtual Coordonnees choisirCase(Plateau*)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>970</x>
+      <y>330</y>
+      <w>250</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Humain
+--
+
+ 
+--
+Coordonnees choisirCase(Plateau*)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>620</x>
+      <y>330</y>
+      <w>250</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Machine
+--
+-niveau: int 
+--
+Coordonnees choisirCase(Plateau*)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>620</x>
+      <y>440</y>
+      <w>250</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Plateau
+--
+-plateau: int**
+-nbColonnes: int
+-nbLignes: int
+-nbAlign: int
+--
+void afficher(Joueur*, Joueur*)
+void marquer(Coordonnees, Joueur*)
+void creerMasques()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>320</x>
+      <y>120</y>
+      <w>180</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Partie
+--
+-plateau: Plateau*
+-j1: Joueur*
+-j2: Joueur*
+--
+void joueur()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>940</x>
+      <y>210</y>
+      <w>170</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>30;30;150;120</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>720</x>
+      <y>210</y>
+      <w>160</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>140;30;30;120</additional_attributes>
+  </element>
+</diagram>
