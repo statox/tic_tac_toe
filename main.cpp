@@ -10,7 +10,6 @@ int main()
 {
 
     Partie* partie = new Partie(1);
-
     partie->jouer();
 
     return 0;

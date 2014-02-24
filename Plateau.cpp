@@ -1,9 +1,8 @@
 #include "Plateau.h"
 #include "Joueur.h"
 
-
-
 #include "templates.h"
+#include <fstream>
 
 using namespace std;
 
@@ -28,6 +27,58 @@ Plateau::Plateau(int col, int lig, int align)
 
     // creation des masques du plateau
     creerMasques();
+}
+
+Plateau::Plateau(string chemin)
+{
+    //chargement du fichier contenant le plateau
+    ifstream source (chemin.c_str());
+
+    int col=-1, lig=0;
+    int tmp;
+
+    // initialisation variables du plateau
+    source >> tmp;
+    SetnbColonnes(tmp);
+    source >> tmp;
+    SetnbLignes(tmp);
+    source >> tmp;
+    SetnbAlign(tmp);
+
+    // reservation du plateau
+    plateau = new int* [nbLignes];
+    int i;
+    for (i=0; i<nbLignes; i++)
+        plateau[i] = new int [nbColonnes];
+
+    // initialisation du plateau
+    for (int i=0; i < nbLignes; i++)
+        for (int j=0; j < nbColonnes; j++)
+            plateau[i][j] = 0;
+
+    // creation des masques du plateau
+    creerMasques();
+
+    // recuperation des valeurs depuis le fichier
+    Coordonnees c;
+    bool continuer=true;
+    while(continuer){
+        source >> tmp;
+        col++;
+        if (col==nbColonnes-1 && lig==nbLignes-1)
+            continuer=false;
+
+        if(col==nbColonnes){
+            col=0;
+            lig++;
+        }
+        c.Setcol(col);
+        c.Setlig(lig);
+
+//        cout << c << " " << tmp << endl;
+
+        Setcase(c, tmp);
+    }
 }
 
 Plateau::~Plateau()
@@ -183,3 +234,4 @@ int Plateau::masquePlein()
     // si on a parcouru tous les masques et qu'aucun n'est rempli on renvoit 0
     return 0;
 }
+

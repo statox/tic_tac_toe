@@ -14,6 +14,9 @@ class Machine : public Joueur
 
         /* cette fonction renvoit la case sur laquelle la machine decide de jouer*/
         Coordonnees choisirCase(Plateau* plateau);
+
+        /* cette methode est appellee par la methode choisirCase*/
+        Coordonnees choixAleatoire(Plateau* plateau);
     protected:
     private:
         int niveau;

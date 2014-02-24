@@ -20,6 +20,8 @@ class Plateau
 
     public:
         Plateau(int col, int lig, int align);
+        // creation du plateau a partir d'un fichier
+        Plateau(string chemin);
         ~Plateau();
 
         int** Getplateau() { return plateau; }
@@ -40,8 +42,6 @@ class Plateau
 
         // cette fonction verifie si l'un des masques est plein et renvoit le chiffre qui le remplit
         int masquePlein();
-
-
 
         void afficher(Joueur* j1, Joueur* j2);
         void marquer(Coordonnees c, Joueur* j);

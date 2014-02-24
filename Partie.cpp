@@ -1,10 +1,11 @@
 #include "Partie.h"
-
+#include <stdlib.h>
 // constructeur par defaut pour gagner du temps pendant les tests
 // a supprimer dans la version finale
 Partie::Partie(int a)
 {
     plateau = new Plateau(5, 5, 3);
+//    plateau = new Plateau("plateau.txt");
 
     j1 = new Humain("joueur 1", 'X');
     j2 = new Humain("joueur 2", 'O');
@@ -123,6 +124,8 @@ void Partie::jouer()
         plateau->afficher(j1, j2);
 
         victoire = finPartie();
+
+        system("pause");
     }while (victoire==0);
 
     cout << "victoire de ";
