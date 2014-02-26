@@ -3,11 +3,11 @@
 // a supprimer dans la version finale
 Partie::Partie(int a)
 {
-//    plateau = new Plateau(3,3,3);
+//    plateau = new Plateau(5, 5, 5);
     plateau = new Plateau("plateau.txt");
 
-    j1 = new Machine("aleat", 'X');
-    j2 = new Machine("minmax", 'O');
+    j1 = new Machine("aleat", 'X', 0, 0);
+    j2 = new Machine("minmax", 'O', 1, 3);
 
     j1->SetnumeroTour(1);
     j1->SetJoueEnPremier(true);
@@ -21,6 +21,11 @@ Partie::Partie(int a)
     cout << j2->Getnom() << " qui joue les " << j2->Getsymbole() << " et joue en " << j2->GetnumeroTour() << "e" << endl;
 
     cout << "sur un plateau " << plateau->GetnbColonnes() << "x" << plateau->GetnbLignes() << " ou il faut aligner " << plateau->GetnbAlign() << " pions pour gagner" << endl << endl;
+}
+
+Partie::~Partie()
+{
+    plateau->~Plateau();
 }
 
 Partie::Partie()
@@ -104,21 +109,26 @@ int Partie::jouer()
         t++;
         cout << endl;
         Plateau* p = new Plateau(*plateau);
+        Coordonnees c;
         if (t%2==1){
             if (j1->GetJoueEnPremier()){
                 cout << "tour de " << j1->Getnom() << endl;
-                plateau->marquer(j1->choisirCase(p), j1);
+                c = j1->choisirCase(p);
+                plateau->marquer(c, j1);
             }else{
                 cout << "tour de " << j2->Getnom() << endl;
-                plateau->marquer(j2->choisirCase(p), j2);
+                c = j2->choisirCase(p);
+                plateau->marquer(c, j2);
             }
         }else{
             if (j1->GetJoueEnPremier()){
                 cout << "tour de " << j2->Getnom() << endl;
-                plateau->marquer(j2->choisirCase(p), j2);
+                c = j2->choisirCase(p);
+                plateau->marquer(c, j2);
             }else{
                 cout << "tour de " << j1->Getnom() << endl;
-                plateau->marquer(j1->choisirCase(p), j1);
+                c = j1->choisirCase(p);
+                plateau->marquer(c, j1);
             }
         }
         plateau->afficher(j1, j2);
@@ -139,29 +149,8 @@ int Partie::jouer()
 int Partie::finPartie()
 {
     // test d'egalite
-//    bool casevide=true;
-//    std::size_t col=0;
-//    std::size_t lig=0;
-//    while (col<plateau->GetnbColonnes() && casevide){
-//        while (lig<plateau->GetnbLignes() && casevide){
-//            lig++;
-//            if (plateau->Getcase(Coordonnees(col, lig))!=0)
-//                casevide=false;
-//        }
-//        lig=0;
-//        col++;
-//    }
-//    if (!casevide)
-//        return -10;
-    bool casevide=false;
-    for (int col=0; col<plateau->GetnbColonnes(); col++){
-        for (int lig=0; lig<plateau->GetnbLignes(); lig++){
-            if (plateau->Getcase(Coordonnees(col, lig))==0)
-                casevide=true;
-        }
-    }
-    if (!casevide)
+    if (plateau->estPlein())
         return -10;
-
-    return plateau->masquePlein();
+    else
+        return plateau->masquePlein();
 }

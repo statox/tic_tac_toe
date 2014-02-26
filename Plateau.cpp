@@ -108,6 +108,11 @@ Plateau::Plateau(string chemin)
 
 Plateau::~Plateau()
 {
+    for (std::size_t i=0; i<masques.size(); i++){
+        masques[i].clear();
+    }
+    masques.clear();
+
     for (int i=0; i<nbLignes; i++)
         delete[] plateau[i];
 
@@ -131,10 +136,7 @@ void Plateau::afficher(Joueur* j1, Joueur* j2)
 
 void Plateau::marquer(Coordonnees c, Joueur* j){
 
-    cout << "debut du marquage" << endl;
-
     if (Getcase(c)==0 /*&& c est dans le plateau*/){
-        cout << "on va marquer la case " << c << " avec le numero " << j->GetnumeroTour() << endl;
         plateau[c.Getlig()][c.Getcol()] = j->GetnumeroTour();
     }
     else

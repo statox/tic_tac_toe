@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-Machine::Machine(string nom, char symbole) : Joueur(nom, symbole)
+Machine::Machine(string nom, char symbole, int type, int force) : Joueur(nom, symbole)
 {
 //    int niv;
 //    cout << "saisissez le niveau de force de la machine: ";
@@ -21,15 +21,31 @@ Machine::Machine(string nom, char symbole) : Joueur(nom, symbole)
 //
 //    Setniveau(niv);
 //    SettypeIA(type);
-    if (nom=="aleat"){
+    if (type==0){
         Setniveau(0);
         SettypeIA(0);
     }
     else{
-        Setniveau(3);
+        Setniveau(force);
         SettypeIA(1);
     }
 
+}
+
+Machine::Machine(string nom, char symbole) : Joueur(nom, symbole)
+{
+    int niv;
+    cout << "saisissez le niveau de force de la machine: ";
+    cin >> niv;
+
+    Setniveau(niv);
+
+    int type;
+    cout << "saisissez le type d'IA de la machine: ";
+    cin >> type;
+
+    Setniveau(niv);
+    SettypeIA(type);
 }
 
 Coordonnees Machine::choisirCase(Plateau* plateau)
@@ -41,12 +57,16 @@ Coordonnees Machine::choisirCase(Plateau* plateau)
         return c;
     }
     else{
+
         Coordonnees* c = new Coordonnees(1,1);
 
         NoeudMinMax::cptNoeud = 0;
+        int tempsAnalyse=time(NULL);
         NoeudMinMax n (*plateau, niveau, true);
         choixMinMax(n, c);
+        tempsAnalyse = time(NULL) - tempsAnalyse;
 
+        cout << "analyse: \t" << NoeudMinMax::cptNoeud << " \tnoeuds en " << tempsAnalyse << " s" << endl;
         cout << "j'ai choisi la case " << *c << endl;
         return *c;
     }
@@ -103,23 +123,30 @@ int Machine::choixMinMax(NoeudMinMax n, Coordonnees* c_choisi)
         pTmp->Setcase(casesVides[i], val);
 
         nSucc = new NoeudMinMax (*pTmp, n.Getprofondeur()-1, !n.GetestMax());
+
+        pTmp->~Plateau();
         resultatsMinMax.push_back(choixMinMax(*nSucc, c_choisi));
 
     }
 
     int index=0;
+    int valreturn=0;
     if (!n.GetestMax()){
         index = indexMaxi(resultatsMinMax);
         c_choisi->Setcol(casesVides[index].Getcol());
         c_choisi->Setlig(casesVides[index].Getlig());
+        valreturn = maxi(resultatsMinMax);
 
-        return maxi(resultatsMinMax);
+        n.~NoeudMinMax();
+        return valreturn;
     }else{
         index = indexMini(resultatsMinMax);
         c_choisi->Setcol(casesVides[index].Getcol());
         c_choisi->Setlig(casesVides[index].Getlig());
+        valreturn = mini(resultatsMinMax);
 
-        return mini(resultatsMinMax);
+        n.~NoeudMinMax();
+        return valreturn;
     }
 }
 

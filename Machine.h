@@ -8,6 +8,7 @@ class Plateau;
 class Machine : public Joueur
 {
     public:
+        Machine(string nom, char symbole, int type, int force);
         Machine(string nom, char symbole);
 
         void Setniveau(int val) { niveau = val; }

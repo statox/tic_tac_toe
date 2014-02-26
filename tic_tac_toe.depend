@@ -89,7 +89,7 @@
 	<vector>
 	"Coordonnees.h"
 
-1393339406 f:\depots_git\tic_tac_toe\machine.h
+1393422662 f:\depots_git\tic_tac_toe\machine.h
 	"Joueur.h"
 	"NoeudMinMax.h"
 
@@ -100,7 +100,7 @@
 	"Joueur.h"
 	"Plateau.h"
 
-1393341338 source:f:\depots_git\tic_tac_toe\machine.cpp
+1393426672 source:f:\depots_git\tic_tac_toe\machine.cpp
 	"Machine.h"
 	"Plateau.h"
 	"Humain.h"
@@ -116,23 +116,24 @@
 1393334728 source:f:\depots_git\tic_tac_toe\noeudminmax.cpp
 	"NoeudMinMax.h"
 
-1393341522 source:f:\depots_git\tic_tac_toe\partie.cpp
+1393426156 source:f:\depots_git\tic_tac_toe\partie.cpp
 	"Partie.h"
 
-1393340144 f:\depots_git\tic_tac_toe\partie.h
+1393420876 f:\depots_git\tic_tac_toe\partie.h
 	"Humain.h"
 	"Machine.h"
 	"Plateau.h"
 
-1393341592 source:f:\depots_git\tic_tac_toe\plateau.cpp
+1393426672 source:f:\depots_git\tic_tac_toe\plateau.cpp
 	"Plateau.h"
 	"Joueur.h"
 	"templates.h"
 	<fstream>
 
-1393341290 source:f:\depots_git\tic_tac_toe\main.cpp
+1393426524 source:f:\depots_git\tic_tac_toe\main.cpp
 	<iostream>
 	"Partie.h"
+	<stdlib.h>
 
 1393251756 source:f:\depots_git\tic_tac_toe\coordonnees.cpp
 	"Coordonnees.h"
