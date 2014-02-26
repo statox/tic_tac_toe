@@ -50,4 +50,54 @@ bool contains(std::vector<T> vec, T val)
     return false;
 }
 
+template<typename T>
+T maxi(std::vector<T> vec)
+{
+    T maxi = vec[0];
+    for (std::size_t i=0; i<vec.size(); i++){
+        if (maxi<vec[i])
+            maxi=vec[i];
+    }
+    return maxi;
+}
+template<typename T>
+T mini(std::vector<T> vec)
+{
+    T mini = vec[0];
+    for (std::size_t i=0; i<vec.size(); i++){
+        if (mini>vec[i]){
+            mini=vec[i];
+        }
+    }
+    return mini;
+}
+
+template<typename T>
+T indexMaxi(std::vector<T> vec)
+{
+    int index=0;
+    T maxi = vec[0];
+    for (std::size_t i=0; i<vec.size(); i++){
+        if (maxi<vec[i]){
+            maxi=vec[i];
+            index=i;
+        }
+    }
+    return index;
+}
+
+template<typename T>
+T indexMini(std::vector<T> vec)
+{
+    int index=0;
+    T mini = vec[0];
+    for (std::size_t i=0; i<vec.size(); i++){
+        if (mini>vec[i]){
+            mini=vec[i];
+            index=i;
+        }
+    }
+    return index;
+}
+
 #endif // TEMPLATES_H_INCLUDED

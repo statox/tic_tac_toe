@@ -1,8 +1,5 @@
 #include <iostream>
 #include "Partie.h"
-#include "Coordonnees.h"
-#include "templates.h"
-#include "NoeudMinMax.h"
 
 using namespace std;
 
@@ -10,21 +7,29 @@ using namespace std;
 int main()
 {
 
-//    Partie* partie = new Partie(1);
-//    partie->jouer();
+//    int jaleat=0, jminmax=0, ega=0;
+//    int cpt=0;
+//    int resultat=0;
+//
+//    do{
+//        Partie* partie = new Partie(1);
+//        resultat = partie->jouer();
+//
+//        if (resultat==1)
+//            jaleat++;
+//        else if (resultat==-1)
+//            jminmax++;
+//        else if (resultat==-10)
+//            ega++;
+//
+//        cout << endl << endl << "aleatoire: " << jaleat << "  minmax: " << jminmax << "  egalite: " << ega << endl << endl;
+//
+//    }while(cpt < 20);
+//
+//    cout << "aleatoire: " << jaleat << "  minmax: " << jminmax << "  egalite: " << ega << endl;
 
-    Joueur* j1 = new Humain("kiki", 'O');
-    Joueur* j2 = new Humain("vivi", 'X');
-
-    j1->SetnumeroTour(-1);
-    j2->SetnumeroTour(1);
-
-    Plateau* p = new Plateau("plateau.txt");
-    p->afficher(j1, j2);
-//    p->evaluation();
-
-    NoeudMinMax* n = new NoeudMinMax(*p);
-    n->Getplateau()->afficher(j1, j2);
+    Partie* partie = new Partie();
+    partie->jouer();
 
     return 0;
 }

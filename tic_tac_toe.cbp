@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin\Debug\tic_tac_toe" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Debug\" />
+				<Option output="bin/Debug/tic_tac_toe" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -16,8 +16,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin\Release\tic_tac_toe" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Release\" />
+				<Option output="bin/Release/tic_tac_toe" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -40,6 +40,8 @@
 		<Unit filename="Joueur.h" />
 		<Unit filename="Machine.cpp" />
 		<Unit filename="Machine.h" />
+		<Unit filename="NoeudMinMax.cpp" />
+		<Unit filename="NoeudMinMax.h" />
 		<Unit filename="Partie.cpp" />
 		<Unit filename="Partie.h" />
 		<Unit filename="Plateau.cpp" />
@@ -50,6 +52,7 @@
 			<code_completion />
 			<envvars />
 			<debugger />
+			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

@@ -2,6 +2,7 @@
 #define MACHINE_H
 
 #include "Joueur.h"
+#include "NoeudMinMax.h"
 
 class Plateau;
 class Machine : public Joueur
@@ -12,14 +13,19 @@ class Machine : public Joueur
         void Setniveau(int val) { niveau = val; }
         int Getniveau() { return niveau; }
 
+        void SettypeIA(int val) { typeIA = val; }
+        int GettypeIA() { return typeIA; }
+
         /* cette fonction renvoit la case sur laquelle la machine decide de jouer*/
         Coordonnees choisirCase(Plateau* plateau);
 
-        /* cette methode est appellee par la methode choisirCase*/
+        /* ces methodes est appellee par la methode choisirCase*/
         Coordonnees choixAleatoire(Plateau* plateau);
+        int choixMinMax(NoeudMinMax n, Coordonnees* c_choisi);
     protected:
     private:
         int niveau;
+        int typeIA;
 };
 
 #endif // MACHINE_H

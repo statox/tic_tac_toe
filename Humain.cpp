@@ -1,5 +1,6 @@
 #include "Humain.h"
 #include "Plateau.h"
+#include "Machine.h"
 
 Humain::Humain(string nom, char symbole) : Joueur(nom, symbole)
 {

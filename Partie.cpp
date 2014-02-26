@@ -1,19 +1,18 @@
 #include "Partie.h"
-#include <stdlib.h>
 // constructeur par defaut pour gagner du temps pendant les tests
 // a supprimer dans la version finale
 Partie::Partie(int a)
 {
-    plateau = new Plateau(5, 5, 3);
-//    plateau = new Plateau("plateau.txt");
+//    plateau = new Plateau(3,3,3);
+    plateau = new Plateau("plateau.txt");
 
-    j1 = new Humain("joueur 1", 'X');
-    j2 = new Humain("joueur 2", 'O');
+    j1 = new Machine("aleat", 'X');
+    j2 = new Machine("minmax", 'O');
 
-    j1->SetnumeroTour(-1);
-    j1->SetJoueEnPremier(false);
-    j2->SetnumeroTour(1);
-    j2->SetJoueEnPremier(true);
+    j1->SetnumeroTour(1);
+    j1->SetJoueEnPremier(true);
+    j2->SetnumeroTour(-1);
+    j2->SetJoueEnPremier(false);
 
     cout << "\t creation d'une partie par defaut:" << endl;
     cout << "la partie oppose : " << endl;
@@ -95,7 +94,7 @@ Partie::Partie()
     cout << endl << endl;
 }
 
-void Partie::jouer()
+int Partie::jouer()
 {
     int t=0;
     plateau->afficher(j1, j2);
@@ -104,39 +103,65 @@ void Partie::jouer()
     do{
         t++;
         cout << endl;
+        Plateau* p = new Plateau(*plateau);
         if (t%2==1){
             if (j1->GetJoueEnPremier()){
                 cout << "tour de " << j1->Getnom() << endl;
-                plateau->marquer(j1->choisirCase(plateau), j1);
+                plateau->marquer(j1->choisirCase(p), j1);
             }else{
                 cout << "tour de " << j2->Getnom() << endl;
-                plateau->marquer(j2->choisirCase(plateau), j2);
+                plateau->marquer(j2->choisirCase(p), j2);
             }
         }else{
             if (j1->GetJoueEnPremier()){
                 cout << "tour de " << j2->Getnom() << endl;
-                plateau->marquer(j2->choisirCase(plateau), j2);
+                plateau->marquer(j2->choisirCase(p), j2);
             }else{
                 cout << "tour de " << j1->Getnom() << endl;
-                plateau->marquer(j1->choisirCase(plateau), j1);
+                plateau->marquer(j1->choisirCase(p), j1);
             }
         }
         plateau->afficher(j1, j2);
 
         victoire = finPartie();
-
-        system("pause");
     }while (victoire==0);
 
-    cout << "victoire de ";
     if (victoire==j1->GetnumeroTour())
-        cout << j1->Getnom();
+        cout << "victoire de " << j1->Getnom();
+    else if (victoire!=-10)
+        cout << "victoire de " << j2->Getnom();
     else
-        cout << j2->Getnom();
+        cout << "egalite" ;
 
+    return victoire;
 }
 
 int Partie::finPartie()
 {
+    // test d'egalite
+//    bool casevide=true;
+//    std::size_t col=0;
+//    std::size_t lig=0;
+//    while (col<plateau->GetnbColonnes() && casevide){
+//        while (lig<plateau->GetnbLignes() && casevide){
+//            lig++;
+//            if (plateau->Getcase(Coordonnees(col, lig))!=0)
+//                casevide=false;
+//        }
+//        lig=0;
+//        col++;
+//    }
+//    if (!casevide)
+//        return -10;
+    bool casevide=false;
+    for (int col=0; col<plateau->GetnbColonnes(); col++){
+        for (int lig=0; lig<plateau->GetnbLignes(); lig++){
+            if (plateau->Getcase(Coordonnees(col, lig))==0)
+                casevide=true;
+        }
+    }
+    if (!casevide)
+        return -10;
+
     return plateau->masquePlein();
 }

@@ -46,6 +46,8 @@ class Plateau
         // cette fonction verifie si l'un des masques est plein et renvoit le chiffre qui le remplit
         int masquePlein();
 
+        bool estPlein();
+
         // on utilise cette fonction pour evaluer la performance d'une configuration
         // la fonction renvoit une valeur entre -oo et +oo
         int evaluation();

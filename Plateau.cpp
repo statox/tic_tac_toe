@@ -131,8 +131,10 @@ void Plateau::afficher(Joueur* j1, Joueur* j2)
 
 void Plateau::marquer(Coordonnees c, Joueur* j){
 
+    cout << "debut du marquage" << endl;
+
     if (Getcase(c)==0 /*&& c est dans le plateau*/){
-//        cout << "on va marquer la case " << c << " avec le numero " << j->GetnumeroTour() << endl;
+        cout << "on va marquer la case " << c << " avec le numero " << j->GetnumeroTour() << endl;
         plateau[c.Getlig()][c.Getcol()] = j->GetnumeroTour();
     }
     else
@@ -259,6 +261,19 @@ int Plateau::masquePlein()
     // si on a parcouru tous les masques et qu'aucun n'est rempli on renvoit 0
     return 0;
 }
+
+bool Plateau::estPlein()
+{
+    bool casevide=false;
+    for (int col=0; col<GetnbColonnes(); col++){
+        for (int lig=0; lig<GetnbLignes(); lig++){
+            if (Getcase(Coordonnees(col, lig))==0)
+                casevide=true;
+        }
+    }
+    return !casevide;
+}
+
 
 int Plateau::evaluation()
 {
