@@ -1,13 +1,34 @@
 #include "Partie.h"
+#include <time.h>
+#include <stdlib.h>
+#include <windows.h>
 // constructeur par defaut pour gagner du temps pendant les tests
 // a supprimer dans la version finale
 Partie::Partie(int a)
 {
-//    plateau = new Plateau(5, 5, 5);
-    plateau = new Plateau("plateau.txt");
+    plateau = new Plateau(9, 7, 4);
+    // ajout de cases aleatoires pour ne pas avoir 10 fois la meme partie
+    Sleep(1000);
+    srand(time(NULL));
+    int col, lig;
+    for (int i=0; i<16; i++){
+        do{
+            col = rand() % plateau->GetnbColonnes();
+            lig = rand() % plateau->GetnbLignes();
+        }while(plateau->Getcase(Coordonnees(col, lig))!=0);
+        plateau->Setcase(Coordonnees(col, lig), -1);
+        do{
+            col = rand() % plateau->GetnbColonnes();
+            lig = rand() % plateau->GetnbLignes();
+        }while(plateau->Getcase(Coordonnees(col, lig))!=0);
+        plateau->Setcase(Coordonnees(col, lig), 1);
+    }
 
-    j1 = new Machine("aleat", 'X', 0, 0);
-    j2 = new Machine("minmax", 'O', 1, 3);
+
+//    plateau = new Plateau("plateau.txt");
+
+    j1 = new Machine("rand", 'X', 0, 3);
+    j2 = new Machine("minmax 2", 'O', 2, 4);
 
     j1->SetnumeroTour(1);
     j1->SetJoueEnPremier(true);
@@ -135,6 +156,9 @@ int Partie::jouer()
 
         victoire = finPartie();
     }while (victoire==0);
+
+
+    plateau->afficher(j1, j2);
 
     if (victoire==j1->GetnumeroTour())
         cout << "victoire de " << j1->Getnom();

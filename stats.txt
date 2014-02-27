@@ -1,0 +1,7 @@
+4x4 profondeur 4
+	0 cases remplies:	47.297 noeuds 	11 s
+	2 cases remplies:	26.405 noeuds 	6 s
+	4 cases remplies:	13.165 noeuds 	5 s
+	6			4.772		2s
+7x9 profondeur 4
+	0 cases remplies:	

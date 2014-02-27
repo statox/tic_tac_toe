@@ -2,6 +2,7 @@
 #include "Partie.h"
 
 #include <stdlib.h>
+#include <math.h>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ int main()
 
     partieAdefinir();
 //    partiePredefinie();
-//    partieStatistiques(20);
+//    partieStatistiques(50);
 
     return 0;
 }
@@ -32,7 +33,7 @@ void partiePredefinie()
 }
 
 void partieStatistiques(int nbPartie){
-    int jaleat=0, jminmax=0, ega=0;
+    int j1=0, j2=0, ega=0;
     int cpt=0;
     int resultat=0;
 
@@ -41,18 +42,18 @@ void partieStatistiques(int nbPartie){
         resultat = partie->jouer();
 
         if (resultat==1)
-            jaleat++;
+            j1++;
         else if (resultat==-1)
-            jminmax++;
+            j2++;
         else if (resultat==-10)
             ega++;
 
         cpt++;
-        cout << endl << endl << "aleatoire: " << jaleat << "  minmax: " << jminmax << "  egalite: " << ega << endl << endl;
-//        system("pause");
+        cout << endl << endl << "joueur 1: " << j1 << "  joueur 2: " << j2 << "  egalite: " << ega << endl << endl;
+        system("pause");
         partie->~Partie();
 
     }while(cpt < nbPartie);
 
-    cout << "aleatoire: " << jaleat << "  minmax: " << jminmax << "  egalite: " << ega << endl;
+    cout << "joueur 1: " << j1 << "  joueur 2: " << j2 << "  egalite: " << ega << endl << endl;
 }

@@ -23,6 +23,8 @@ class Machine : public Joueur
         /* ces methodes est appellee par la methode choisirCase*/
         Coordonnees choixAleatoire(Plateau* plateau);
         int choixMinMax(NoeudMinMax n, Coordonnees* c_choisi);
+        int choixMinMaxElagage(NoeudMinMax n, Coordonnees* c_choisi, int alpha, int beta);
+
     protected:
     private:
         int niveau;

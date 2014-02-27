@@ -13,6 +13,6 @@ NoeudMinMax::NoeudMinMax(const Plateau& p, int prof, bool maxi)
 
 NoeudMinMax::~NoeudMinMax()
 {
-//    cout << "destruction noeud profondeur " << profondeur << endl;
+//    cout << "destruction du noeud " << cptNoeud << endl;
     plateau->~Plateau();
 }

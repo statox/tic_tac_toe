@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <iostream>
 
+#define INFINI 2147483647
+
 template< typename T>
 void show(std::vector< T > A)
 {
